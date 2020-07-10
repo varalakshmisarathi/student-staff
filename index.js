@@ -1,31 +1,11 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const app = express();
-const port = 3000;
+const port = 4000;
 
 app.use(bodyparser.json());
-let staffDetail = [
-  {
-    "id":1,
-    "name":"staff1"
-},
-{
-    "id":2,
-    "name":"staff2"
-}
-]
-let studentDetail = [
-  {
-    "id":1,
-    "name":"lakshmi",
-    "staffid":1
-},
-{
-    "id":2,
-    "name":"varalakshmi",
-    "staffid":"2"
-}
-]
+let staffDetail = []
+let studentDetail = []
 app.post("/studentDetail", (req, res) => {
   studentDetail.push(req.body);
   res.json({ message: "studentdetail created successfully!" })
